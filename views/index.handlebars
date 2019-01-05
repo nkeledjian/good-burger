@@ -4,8 +4,8 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+    {{#unless devoured}}
+      {{> burgers devoured=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -14,12 +14,12 @@
 
 <ul>
   {{#each burgers}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+    {{#if devoured}}
+      {{> burgers devoured=false}}
     {{/if}}
   {{/each}}
 </ul>
-{{!-- NOTE original values from cat example are: for="ca" and id="ca"--}}
+{{!-- NOTE original values from cat example are: label for="ca" and input id="ca"--}}
 <h2>Add a Burger</h2>
 <form class="create-form">
 
