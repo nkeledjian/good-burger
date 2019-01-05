@@ -1,0 +1,32 @@
+<h1>Burgers!</h1>
+
+<h2>Burgers ready to eat!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers devoured!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if sleepy}}
+      {{> cats/cat-block sleep=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+{{!-- NOTE original values from cat example are: for="ca" and id="ca"--}}
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="brgr">Burger name:</label>
+    <input type="text" id="brgr" name="name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
