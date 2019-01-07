@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-devoured").on("click", function(event) {
+    $(".burger-devoured").on("click", function(event) {
       var id = $(this).data("id");
       var newDevoured = $(this).data("newdevoured");
   
@@ -22,12 +22,12 @@ $(function() {
     });
   
     $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
+      // Make sure to preventDefault on a submit event(allow user to press enter key to submit burger name).
       event.preventDefault();
   
       var newBurger = {
-        name: $("#brgr").val().trim(),
-        devoured: $("[name=devoured]:checked").val().trim()
+        burger_name: $("#brgr").val().trim(),
+        // devoured: $("[name=devoured]:checked").val().trim()
       };
   
       // Send the POST request.

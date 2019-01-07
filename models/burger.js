@@ -17,11 +17,13 @@ var burger = {
         cb(res);
       });
     },
-    delete: function(condition, cb) {
-      orm.delete("burgers", condition, function(res) {
-        cb(res);
-      });
-    }
+    // future delete functionality
+
+    // delete: function(condition, cb) {
+    //   orm.delete("burgers", condition, function(res) {
+    //     cb(res);
+    //   });
+    // }
   };
   
   // Export the database functions for the controller (burgers_Controller.js).

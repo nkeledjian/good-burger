@@ -4,9 +4,10 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
+  {{#unless devoured}}
+  {{!-- {{> burgers/burger-block devoured=true}} --}}
+  {{> burgers/burger-block}}
+  {{/unless}}
   {{/each}}
 </ul>
 
@@ -14,18 +15,19 @@
 
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
+  {{#if devoured}}
+  {{!-- {{> burgers/burger-block devoured=false}} --}}
+  {{> burgers/burger-block}}
+  {{/if}}
   {{/each}}
 </ul>
-{{!-- NOTE original values from cat example are: label for="ca" and input id="ca"--}}
+
 <h4>Add a Burger</h4>
 <form class="create-form">
 
   <div class="form-group">
     <label for="brgr">Burger name:</label>
-    <input type="text" id="brgr" name="name">
+    <input type="text" id="brgr" name="burger_name">
   </div>
 
   <button type="submit">Add Burger</button>
