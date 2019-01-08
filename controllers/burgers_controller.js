@@ -28,6 +28,7 @@ var burger = require("../models/burger.js");
   });
   
   router.put("/api/burgers/:id", function(req, res) {
+    console.log("req", req)
     var condition = "id = " + req.params.id;
   
     console.log("condition", condition);
