@@ -1,3 +1,5 @@
+// Visitors can build burgers which are displaying successfully. They cannot devour their burgers yet, though. The app currently has a SQL syntax issue which may be contributing to the problem.
+
 var express = require("express");
 
 var router = express.Router();
