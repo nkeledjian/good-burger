@@ -28,7 +28,10 @@ $(function() {
   
       var newBurger = {
         burger_name: $("#brgr").val().trim(),
-        devoured: $("[name=devoured]:checked").val(devoured)
+        
+        // app error - 503 error with PUT http request -  may be related to the lack of data for devoured state Could we pass in the undevoured state as a defualt here? (without having the user provide input that the burger they entered is not devoured)
+
+        // devoured: $("[name=devoured]:checked").val(newDevoured)
       };
   
       // Send the POST request.
