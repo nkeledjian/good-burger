@@ -3,23 +3,22 @@ $(function() {
     $(".burger-devoured").on("click", function(event) {
       var id = $(this).data("id");
       console.log("id", id)
-      var newDevoured = $(this).data(newDevoured);
-      console.log("newDevoured", newDevoured)
+      // var newDevoured = $(this).data(newDevoured);
+      // console.log("newDevoured", newDevoured)
       var newDevouredState = {
-        devoured: newDevoured
+        devoured: true
       };
-      console.log('LOG newDevour',newDevoured.devoured);
+      // console.log('LOG newDevoured',newDevoured.devoured);
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newDevouredState
       }).then(
         function() {
-          console.log("Before devouring")
-          console.log("now devouring", newDevoured);
+          // console.log("now devouring", newDevoured);
           // Reload the page to get the updated list
           location.reload();
-          console.log("After devouring");
+          
         }
       );
     });
@@ -31,11 +30,9 @@ $(function() {
       var newBurger = {
         burger_name: $("#brgr").val().trim(),
         
-        // app error - 503 error with PUT http request -  may be related to the lack of data for devoured state Could we pass in the undevoured state as a defualt here? (without having the user provide input that the burger they entered is not devoured)
-
-        // devoured: $("[name=devoured]:checked").val(newDevoured)
+        devoured: false
       };
-  
+      console.log("New Burger Created", newBurger)
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
