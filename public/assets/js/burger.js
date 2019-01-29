@@ -3,21 +3,23 @@ $(function() {
     $(".burger-devoured").on("click", function(event) {
       var id = $(this).data("id");
       console.log("id", id)
-      var newDevoured = $(this).data("newdevoured");
+      var newDevoured = $(this).data(newDevoured);
       console.log("newDevoured", newDevoured)
       var newDevouredState = {
         devoured: newDevoured
       };
-  
+      console.log('LOG newDevour',newDevoured.devoured);
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newDevouredState
       }).then(
         function() {
+          console.log("Before devouring")
           console.log("now devouring", newDevoured);
           // Reload the page to get the updated list
           location.reload();
+          console.log("After devouring");
         }
       );
     });
